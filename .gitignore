@@ -1,0 +1,7 @@
+.angular
+.vscode
+.idea
+.env
+node_modules
+.vite
+dist

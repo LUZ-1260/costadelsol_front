@@ -1,0 +1,147 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.main-nav-bar {
+ background-color: #E6F0FF;
+  padding: 1rem 0;
+  position: fixed;
+  top: 40px;
+  left: 0;
+  width: 100%;
+  z-index: 90;
+}
+
+.main-nav-content {
+  max-width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #0d1e3a;
+  white-space: nowrap;
+}
+
+.logo img {
+  height: 100px;
+  width: auto;
+  display: block;
+}
+
+.main-nav-links {
+  display: flex;
+  gap: 2rem;
+  margin: 0 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.main-nav-links a {
+  color: #555;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.2rem;
+  padding: 0.5rem 0;
+  position: relative;
+}
+
+.main-nav-links a:hover,
+.main-nav-links a.active {
+  color: #007bff;
+}
+
+.main-nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 3px;
+  background-color: #007bff;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  transition: width 0.3s ease-out;
+}
+
+.main-nav-links a:hover::after,
+.main-nav-links a.active::after {
+  width: 100%;
+}
+
+.primary-action-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+}
+
+.primary-action-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .main-nav-content {
+    padding: 0 1rem;
+  }
+  .main-nav-links {
+    gap: 1rem;
+    margin: 0 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-nav-content {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .main-nav-links {
+    width: 100%;
+    margin: 0;
+    justify-content: center;
+    gap: 0.8rem;
+  }
+
+  .main-nav-links a {
+    font-size: 1.2rem;
+    padding: 0.3rem 0.5rem;
+  }
+
+  .primary-action-btn {
+    width: 100%;
+    max-width: 300px;
+    margin-top: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-nav-content {
+    padding: 0 0.5rem;
+  }
+
+  .main-nav-links a {
+    font-size: 0.85rem;
+  }
+
+  .primary-action-btn {
+    font-size: 0.9rem;
+    padding: 0.7rem 1rem;
+  }
+}

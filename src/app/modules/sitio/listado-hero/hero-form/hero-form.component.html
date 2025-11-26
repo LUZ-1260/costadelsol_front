@@ -1,0 +1,115 @@
+<div class="modal-header">
+  <h4 class="modal-title text-white">{{ labelTitulo }}</h4>
+</div>
+
+<div class="modal-body">
+  <form [formGroup]="formRegistro">
+    <div class="row mt-2 px-2">
+
+      <div class="col-12">
+        <mat-form-field class="w-100" appearance="fill">
+          <mat-label>Título</mat-label>
+          <i matIconPrefix class="bi bi-type"></i>
+          <input matInput formControlName="titulo" />
+          @if(formRegistro.get('titulo')?.hasError('required')){
+            <mat-error>Este campo es requerido</mat-error>
+          }
+          @if(formRegistro.get('titulo')?.hasError('minlength')){
+            <mat-error>Mínimo 2 caracteres</mat-error>
+          }
+        </mat-form-field>
+      </div>
+
+      <div class="col-12">
+        <mat-form-field class="w-100" appearance="fill">
+          <mat-label>Subtítulo</mat-label>
+          <i matIconPrefix class="bi bi-text-left"></i>
+          <input matInput formControlName="subtitulo" />
+          @if(formRegistro.get('subtitulo')?.hasError('maxlength')){
+            <mat-error>Máximo 150 caracteres</mat-error>
+          }
+        </mat-form-field>
+      </div>
+
+      <div class="col-12">
+        <mat-form-field class="w-100" appearance="fill">
+          <mat-label>Descripción</mat-label>
+          <i matIconPrefix class="bi bi-card-text"></i>
+          <textarea matInput rows="3" formControlName="descripcion"></textarea>
+          @if(formRegistro.get('descripcion')?.hasError('required')){
+            <mat-error>Este campo es requerido</mat-error>
+          }
+          @if(formRegistro.get('descripcion')?.hasError('minlength')){
+            <mat-error>Mínimo 4 caracteres</mat-error>
+          }
+        </mat-form-field>
+      </div>
+
+      <div class="col-12">
+        <mat-form-field class="w-100" appearance="fill">
+          <mat-label>Imagen URL</mat-label>
+          <i matIconPrefix class="bi bi-image"></i>
+          <input matInput formControlName="imagen" />
+          @if(formRegistro.get('imagen')?.hasError('required')){
+            <mat-error>Este campo es requerido</mat-error>
+          }
+        </mat-form-field>
+      </div>
+
+      <div class="col-12">
+        <mat-form-field class="w-100" appearance="fill">
+          <mat-label>Texto del Botón</mat-label>
+          <i matIconPrefix class="bi bi-fonts"></i>
+          <input matInput formControlName="boton_texto" />
+          @if(formRegistro.get('boton_texto')?.hasError('maxlength')){
+            <mat-error>Máximo 50 caracteres</mat-error>
+          }
+        </mat-form-field>
+      </div>
+
+      <div class="col-12">
+        <mat-form-field class="w-100" appearance="fill">
+          <mat-label>URL del Botón</mat-label>
+          <i matIconPrefix class="bi bi-link-45deg"></i>
+          <input matInput formControlName="boton_url" />
+          @if(formRegistro.get('boton_url')?.hasError('maxlength')){
+            <mat-error>Máximo 250 caracteres</mat-error>
+          }
+        </mat-form-field>
+      </div>
+
+      <div class="col-6">
+        <mat-form-field class="w-100" appearance="fill">
+          <mat-label>Orden</mat-label>
+          <i matIconPrefix class="bi bi-list-ol"></i>
+          <input matInput type="number" formControlName="orden" />
+          @if(formRegistro.get('orden')?.hasError('required')){
+            <mat-error>Campo requerido</mat-error>
+          }
+        </mat-form-field>
+      </div>
+
+      <div class="col-6 d-flex align-items-center">
+        <mat-checkbox formControlName="estado">
+         Activo
+        </mat-checkbox>
+      </div>
+
+    </div>
+  </form>
+</div>
+
+<div class="modal-footer">
+  @if(data.id){
+    <button class="btn btn-warning" (click)="accionRegistrar()" [disabled]="formRegistro.invalid">
+      <i class="bi bi-pencil-square"></i> Actualizar
+    </button>
+  } @else {
+    <button class="btn btn-primary" (click)="accionRegistrar()" [disabled]="formRegistro.invalid">
+      <i class="bi bi-save"></i> Registrar
+    </button>
+  }
+  <button class="btn btn-secondary" (click)="modalActiveService.dismiss('cancel')">
+    <i class="bi bi-x-lg"></i> Cancelar
+  </button>
+</div>

@@ -1,0 +1,60 @@
+<div class="container-fluid min-vh-100 d-flex align-items-center justify-content-center bg-light">
+  <div class="card border-0 shadow-lg rounded-3 overflow-hidden w-100" style="max-width: 800px;">
+    <div class="row g-0">
+
+      <div class="col-lg-12 col-md-12 col-sm-12 bg-white p-5 d-flex flex-column justify-content-center">
+        <div class="text-center mb-4">
+          <img src="assets/images/logoargo.png" class="logo mb-3">
+          <h4 class="fw-bold">Bienvenido a RE Costa del Sol™ Real Estate</h4>
+          <p class="text-muted small">Ingresa tus credenciales para continuar</p>
+        </div>
+
+        <form [formGroup]="formAuth" (ngSubmit)="authLogin()">
+          <mat-form-field appearance="fill" class="w-100 mb-3">
+            <mat-label>Usuario</mat-label>
+            <mat-icon matIconPrefix>person</mat-icon>
+            <input matInput formControlName="username" />
+            @if(formAuth.get('username')?.hasError('required')){
+            <mat-error>Este campo es requerido</mat-error>
+            }
+            @if(formAuth.get('username')?.hasError('minlength')){
+            <mat-error>Mínimo de 8 caracteres</mat-error>
+            }
+            @if(formAuth.get('username')?.hasError('maxlength')){
+            <mat-error>Máximo hasta 20 caracteres</mat-error>
+            }
+          </mat-form-field>
+
+          <mat-form-field appearance="fill" class="w-100 mb-4">
+            <mat-label>Contraseña</mat-label>
+            <mat-icon matIconPrefix>lock</mat-icon>
+            <button type="button" class="btn" matSuffix (click)="togglePasswordVisibility()">
+              <mat-icon>{{ showPassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+            </button>
+            <input [type]="showPassword ? 'text' : 'password'" matInput formControlName="password" />
+            @if(formAuth.get('password')?.hasError('required')){
+            <mat-error>Este campo es requerido</mat-error>
+            }
+            @if(formAuth.get('password')?.hasError('minlength')){
+            <mat-error>Mínimo de 8 caracteres</mat-error>
+            }
+            @if(formAuth.get('password')?.hasError('maxlength')){
+            <mat-error>Máximo hasta 20 caracteres</mat-error>
+            }
+          </mat-form-field>
+
+          <button class="w-100 py-2 fw-semibold shadow-sm btn btn-primary rounded" matTooltip="Ingresar a la Plataforma"
+            [disabled]="formAuth.invalid">
+            <i class="bi bi-box-arrow-in-right me-2"></i> Ingresar
+          </button>
+        </form>
+
+        <div class="text-center mt-4">
+          <small class="text-muted">Copyright &copy; {{fecha}}. Todos los Derechos
+            reservados.</small>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
