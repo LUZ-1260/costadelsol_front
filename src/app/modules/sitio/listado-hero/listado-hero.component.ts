@@ -13,7 +13,7 @@ import { SimpleButtonsRendererComponent } from '../../../utils/renderer/simpleBu
 import { HeroModel } from '../../../models/sitio/hero.model';
 
 import { HeroFormComponent } from './hero-form/hero-form.component';
-import { HeroService } from 'src/app/services/hero.service';
+import { HeroService } from 'src/app/services/sitio/hero.service';
 
 
 @Component({

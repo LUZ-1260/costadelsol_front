@@ -42,24 +42,17 @@ $my-theme: mat.define-light-theme((color: (primary: $my-primary,
 
 @include mat.all-component-themes($my-theme);
 
-/*.mdc-line-ripple,
-.mdc-line-ripple::before,
-.mdc-line-ripple::after {
-	//display: none !important;
-	//border: 0 !important;
-	background: transparent !important;
-}*/
+
 
 .mdc-text-field--filled {
 	background-color: white !important;
 	color: #212121 !important;
-	//border-radius: 30px !important;
 }
 
 :root {
 	--color-primary: #001F3F;
-	--color-primary-light: #77187e;
-	--color-primary-contrast: #f0f5ed;
+	--color-primary-light: #27187e;
+	--color-primary-contrast: #ededf5;
 }
 
 
@@ -147,7 +140,7 @@ $my-theme: mat.define-light-theme((color: (primary: $my-primary,
 	--mdc-checkbox-selected-focus-icon-color: #001F3F;
 	--mdc-checkbox-selected-hover-icon-color: #001F3F;
 	--mdc-checkbox-selected-icon-color: #001F3F;
-	--mdc-checkbox-selected-pressed-icon-color: #aa3169;
+	--mdc-checkbox-selected-pressed-icon-color: #314daa;
 	--mdc-checkbox-unselected-focus-icon-color: #212121;
 	--mdc-checkbox-unselected-hover-icon-color: #212121;
 	--mdc-checkbox-unselected-icon-color: rgba(0, 0, 0, 0.54);
