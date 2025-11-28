@@ -15,7 +15,6 @@ import { HeroModel } from '../../../models/sitio/hero.model';
 import { HeroFormComponent } from './hero-form/hero-form.component';
 import { HeroService } from 'src/app/services/sitio/hero.service';
 
-
 @Component({
 	selector: 'app-listado-hero',
 	templateUrl: './listado-hero.component.html',

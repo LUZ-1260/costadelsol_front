@@ -1,19 +1,23 @@
 footer {
   background-color: #0d1e3a;
   color: white;
-  padding: 1.5rem 3rem;
+  height: 80px; 
   width: 100%;
-  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 -2px 5px #0000001a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .footer-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
+  width: 100%;
   max-width: 1200px;
-  margin: 0 auto;
+  padding: 0 2rem;
 }
+
 
 .copyright-section {
   font-size: 0.85rem;
@@ -34,9 +38,6 @@ footer {
 }
 
 
-
-
-
 @media (max-width: 768px) {
   .footer-content {
     flex-direction: column;
@@ -50,10 +51,8 @@ footer {
     margin-bottom: 0.5rem;
   }
 
-  .nav-links {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    .nav-links {
+    display: none !important;
   }
 
   .nav-links a {

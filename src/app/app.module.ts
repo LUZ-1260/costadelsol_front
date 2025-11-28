@@ -17,6 +17,18 @@ import { NgApexchartsModule } from 'ng-apexcharts';
 
 import { MomentDateAdapter } from '@angular/material-moment-adapter';
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
+import { CarouselModule } from '@coreui/angular'; // 
+
+import { RouterLink } from '@angular/router';
+import {
+	CarouselCaptionComponent,
+	CarouselComponent,
+	CarouselControlComponent,
+	CarouselIndicatorsComponent,
+	CarouselInnerComponent,
+	CarouselItemComponent
+} from '@coreui/angular';
+
 
 export const MY_DATE_FORMATS = {
 	parse: { dateInput: 'DD/MM/YYYY' },
@@ -32,10 +44,9 @@ export const MY_DATE_FORMATS = {
 @NgModule({
 	declarations: [
 		AppComponent,
-		//SafePipe,
 		...AppThemeConfig,
 		...AppProyectosConfig,
- 	],
+	],
 	imports: [
 		CommonModule,
 		BrowserModule,
@@ -45,6 +56,7 @@ export const MY_DATE_FORMATS = {
 		BrowserAnimationsModule,
 		HttpClientModule,
 		SweetAlert2Module,
+		CarouselModule,
 		ToastrModule.forRoot({
 			timeOut: 3000,
 			positionClass: 'toast-top-right',
@@ -52,6 +64,12 @@ export const MY_DATE_FORMATS = {
 			progressBar: true
 		}),
 		...AppMaterialModule,
+		CarouselCaptionComponent,
+		CarouselComponent,
+		CarouselControlComponent,
+		CarouselIndicatorsComponent,
+		CarouselInnerComponent,
+		CarouselItemComponent
 	],
 	bootstrap: [AppComponent],
 	providers: [

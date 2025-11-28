@@ -15,11 +15,10 @@ html, body {
 
   position: fixed;
   top: 0;
-  left: 0;
+  left: 0; height: 60px;
   width: 100%;
   z-index: 100;
 }
-
 .top-bar-content {
   max-width: 1400px;
   margin: 0 auto;
@@ -140,26 +139,6 @@ html, body {
   }
 }
 
-@media (max-width: 768px) {
-  .top-bar-content {
-    flex-direction: column;
-    gap: 0.8rem;
-    text-align: center;
-  }
-
-  .search-box {
-    width: 90%;
-    max-width: 300px;
-    margin-bottom: 0.5rem;
-  }
-
-  .top-nav-links {
-    justify-content: center;
-    width: 100%;
-    flex-wrap: wrap;
-    gap: 0.8rem;
-  }
-}
 
 @media (max-width: 480px) {
   .top-bar-content {
@@ -169,4 +148,82 @@ html, body {
   .top-bar .search-box input {
     font-size: 0.8rem;
   }
+}
+
+
+
+
+@media (max-width: 768px) {
+    
+    .top-bar-content {
+        flex-direction: row; 
+        justify-content: space-between; 
+        align-items: center; 
+        gap: 0.5rem; 
+        padding: 0 1rem;
+    }
+
+    .top-nav-links {
+        justify-content: flex-end; 
+        width: auto; 
+        flex-wrap: nowrap;
+        gap: 0.8rem;
+    }
+    
+    .nav-icon-link {
+        font-size: 0; 
+        i {
+            font-size: 1.2rem;
+            margin: 0; 
+        }
+    }
+    .dropdown .dropbtn {
+        font-size: 0; 
+        i.bi-globe, i.bi-chevron-down {
+            font-size: 1.2rem;
+            margin: 0;
+        }
+        i.bi-chevron-down { display: none; }
+    }
+
+
+
+    .search-box:focus-within {
+        width: 100%; 
+        max-width: 350px; 
+        
+        input {
+            display: block;
+            margin-left: 0.7rem;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    
+    .nav-icon-link {
+        font-size: 0; 
+        i {
+            font-size: 1rem; 
+            margin: 0; 
+        }
+    }
+    
+    .dropdown {
+        .dropbtn {
+            font-size: 0; 
+            
+            i.bi-globe {
+                font-size: 1rem; 
+                margin: 0;
+            }
+            i.bi-chevron-down {
+                 display: none;
+            }
+        }
+    }
+    
+    .top-nav-links {
+        gap: 1rem; 
+    }
 }

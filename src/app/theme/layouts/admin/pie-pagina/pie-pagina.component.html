@@ -1,0 +1,161 @@
+@if (dataLoaded) {
+
+<footer class="text-center text-lg-start" style="background-color: #f7f7f7; color: #333;">
+
+	<div class="container pt-4 pb-4">
+		<div class="row">
+
+			<div class="col-lg-3 col-md-6 mb-4 mb-md-0 text-start">
+				<h5 class="text-uppercase fw-bold">Propiedades</h5>
+				<p class="text-muted small">Explorar por tipo de vivienda</p>
+				<ul class="list-unstyled">
+					<li><a class="text-muted text-decoration-none">Apartamentos</a></li>
+					<li><a class="text-muted text-decoration-none">Áticos</a></li>
+					<li><a class="text-muted text-decoration-none">Chalets</a></li>
+					<li><a class="text-muted text-decoration-none">Con piscina</a></li>
+				</ul>
+			</div>
+
+
+			<div class="col-lg-3 col-md-6 mb-4 mb-md-0 text-start">
+				<h5 class="text-uppercase fw-bold">Comprar</h5>
+				<p class="text-muted small">Costa del Sol Occidental</p>
+				<ul class="list-unstyled">
+					<li><a class="text-muted text-decoration-none">Marbella</a></li>
+					<li><a class="text-muted text-decoration-none">Estepona</a></li>
+				</ul>
+			</div>
+
+			<div class="col-lg-3 col-md-6 mb-4 mb-md-0 text-start">
+				<h5 class="text-uppercase fw-bold">Alquilar</h5>
+				<p class="text-muted small">Costa del Sol Occidental</p>
+				<ul class="list-unstyled">
+					<li><a class="text-muted text-decoration-none">Marbella</a></li>
+					<li><a class="text-muted text-decoration-none">Estepona</a></li>
+				</ul>
+			</div>
+
+			<div class="col-lg-3 col-md-6 mb-4 mb-md-0 text-start">
+				<h5 class="text-uppercase fw-bold">Venta</h5>
+				<p class="text-muted small">¿Quiere vender su propiedad?</p>
+				<ul class="list-unstyled">
+					<li><a class="text-muted text-decoration-none">Publicá tu propiedad gratis</a></li>
+					<li><a class="text-muted text-decoration-none">Tasación sin compromiso</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<hr class="mt-0 mb-4" style="border-top: 1px solid #3a3ef1;">
+
+
+	<div class="container pb-4">
+		<div class="row">
+			<div class="col-lg-3 col-md-12 mb-4 mb-md-0 text-start">
+				<div class="mb-3">
+					<img [src]="sitio.logo_footer" alt="Logo Footer" class="img-fluid" style="max-height: 70px;">
+				</div>
+				<div class="mb-4 d-flex align-items-center">
+					@if (sitio.url_instagram) {
+					<a [href]="sitio.url_instagram" target="_blank" class="text-primary fs-4 me-3">
+						<i class="bi bi-instagram"></i>
+					</a>
+					}
+					@if (sitio.url_facebook) {
+					<a [href]="sitio.url_facebook" target="_blank" class="text-primary fs-4 me-3">
+						<i class="bi bi-facebook"></i>
+					</a>
+					}
+					@if (sitio.url_linkedin) {
+					<a [href]="sitio.url_linkedin" target="_blank" class="text-primary fs-4 me-3">
+						<i class="bi bi-linkedin"></i>
+					</a>
+					}
+
+					@if (sitio.url_youtube) {
+					<a [href]="sitio.url_youtube" target="_blank" class="text-primary fs-4 me-3">
+						<i class="bi bi-youtube"></i>
+					</a>
+					}
+
+					@if (sitio.url_twitter) {
+					<a [href]="sitio.url_twitter" target="_blank" class="text-primary fs-4 me-3">
+						<i class="bi bi-twitter-x"></i>
+					</a>
+					}
+				</div>
+
+				@if (sitio.telefono_principal) {
+				<div class="mb-2">
+					<i class="bi bi-whatsapp me-2 text-success fs-5"></i>
+					<a [href]="'tel:' + sitio.telefono_principal" class="text-decoration-none" style="color: #333;">
+						{{ sitio.telefono_principal }}
+					</a>
+				</div>
+				}
+
+				@if (sitio.email_contacto) {
+				<div>
+					<i class="bi bi-envelope-fill me-2 text-muted fs-5"></i>
+					<a [href]="'mailto:' + sitio.email_contacto" class="text-decoration-none" style="color: #333;">
+						{{ sitio.email_contacto }}
+					</a>
+				</div>
+				}
+
+			</div>
+			<div class="col-lg-4 col-md-6 mb-4 mb-md-0 text-start">
+				<h5 class="text-uppercase mb-3" style="font-weight: bold; color: #333;">Nosotros</h5>
+				<ul class="list-unstyled">
+					<li><a href="#!" class="text-decoration-none text-muted">Conozca más</a></li>
+					<li><a href="#!" class="text-decoration-none text-muted">Sobre RE Costa del Sol™ Real Estate</a>
+					</li>
+					<p class="text-muted">{{ sitio.sobre_nosotros }}</p>
+
+					<li><a href="#!" class="text-decoration-none text-muted">Nuestra misión</a></li>
+					<p class="text-muted">{{ sitio.mision_texto }}</p>
+
+
+					<li><a href="#!" class="text-decoration-none text-muted">Blog inmobiliario</a></li>
+					<li><a href="#!" class="text-decoration-none text-muted">Únete a nuestro equipo</a></li>
+				</ul>
+			</div>
+
+			<div class="col-lg-5 col-md-6 mb-4 mb-md-0 text-start">
+				<h5 class="text-uppercase mb-3" style="font-weight: bold; color: #333;">Newsletter</h5>
+				<p class="text-muted">Suscríbase y reciba cada semana las mejores oportunidades en RE Costa del Sol™ -
+					Real Estate.</p>
+				<div class="position-relative mb-3">
+					<i class="bi bi-envelope-fill position-absolute"
+						style="top: 50%; left: 12px; transform: translateY(-50%); color: #0d6efd;"></i>
+					<input type="email" class="form-control ps-5" placeholder="Email*">
+				</div>
+
+				<div class="row">
+					<div class="col-lg-8">
+						<div class="form-check mb-3">
+							<input class="form-check-input" type="checkbox" value="" id="privacyCheck">
+							<label class="form-check-label text-muted" for="privacyCheck" style="font-size: 0.9em;">
+								Acepto la <a href="#!" class="text-primary text-decoration-none">política de
+									privacidad</a>
+								y el
+								<a href="#!" class="text-primary text-decoration-none">tratamiento de datos</a>.
+							</label>
+						</div>
+					</div>
+					<div class="col-lg-4">
+						<button type="submit" class="btn btn-primary" style="width: 170px;">Suscribirse</button>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<div class="text-center p-3 text-white" style="background-color: #0d1e3a;;">
+		© 2025 {{ sitio.titulo }} | Todos los derechos reservados. | Powered by GeoIA™ Gen IA Engine
+	</div>
+
+</footer>
+
+}

@@ -20,6 +20,11 @@ const routes: Routes = [
 				canActivate: [],
 			},
 			{
+				path: 'hero',
+				loadComponent: () => import('./modules/sitio/hero/hero.component').then(m => m.HeroComponent),
+				canActivate: [],
+			},
+			{
 				path: 'listadoHero',
 				loadComponent: () => import('./modules/sitio/listado-hero/listado-hero.component').then(m => m.ListadoHeroComponent),
 				canActivate: [],

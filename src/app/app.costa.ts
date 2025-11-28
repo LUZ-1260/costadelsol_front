@@ -6,6 +6,7 @@ import { SimpleButtonsRendererComponent } from './utils/renderer/simpleButtons/s
 import { ListadoHeroComponent } from './modules/sitio/listado-hero/listado-hero.component';
 import { HeroFormComponent } from './modules/sitio/listado-hero/hero-form/hero-form.component';
 import { SitioComponent } from './modules/sitio/sitio.component';
+import { HeroComponent } from './modules/sitio/hero/hero.component';
 
 export const AppProyectosConfig = [
 	SimpleButtonsRendererComponent,
@@ -13,5 +14,7 @@ export const AppProyectosConfig = [
 	LoginComponent,
 	ListadoHeroComponent,
 	HeroFormComponent,
-	SitioComponent
+	SitioComponent,
+	  HeroComponent,
+
 ]

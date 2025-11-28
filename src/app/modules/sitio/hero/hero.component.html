@@ -1,0 +1,31 @@
+@if (dataLoaded) {
+<c-carousel [dark]="true" [wrap]="false">
+	
+	<c-carousel-inner>
+		@for (slide of slides; track slide.id) {
+		<c-carousel-item>
+			<img [src]="slide.src" alt="{{slide.title}}" class="d-block w-100" />
+			<c-carousel-caption class="d-none d-md-block carousel-caption-custom">
+				<h3 style="color: white; font-size: 3rem; font-weight: 500;">
+					{{ slide.title }}
+				</h3>
+				<p style="color: white; font-size: 1.2rem; margin-top: 10px;">
+					{{ slide.subtitle }}
+				</p>
+				@if (slide.buttonUrl) {
+				<button class="btn btn-primary" [routerLink]="slide.buttonUrl" style="margin-top: 20px;">
+					{{ slide.buttonText }}
+				</button>
+				}
+			</c-carousel-caption>
+
+		</c-carousel-item>
+		}
+	</c-carousel-inner>
+
+	
+    <c-carousel-control direction="prev" /> 
+    
+    <c-carousel-control direction="next" />
+</c-carousel>
+}

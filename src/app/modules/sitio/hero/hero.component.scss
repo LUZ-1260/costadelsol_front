@@ -1,0 +1,57 @@
+c-carousel {
+    display: block;
+}
+
+c-carousel-inner,
+c-carousel-item img.d-block.w-100 {
+    height: 55vh; 
+    width: 100%;
+    object-fit: cover; 
+}
+
+c-carousel-control {
+    width: 15%; 
+    opacity: 1;
+}
+
+c-carousel-control .carousel-control-prev-icon,
+c-carousel-control .carousel-control-next-icon {
+    filter: invert(100%) brightness(100%) drop-shadow(0 0 5px rgba(0, 0, 0, 0.8)); 
+    opacity: 1;
+}
+
+c-carousel-control span {
+    color: white !important; 
+    font-size: 3rem; 
+    line-height: 1;
+    text-shadow: 0 0 5px #00000095;
+}
+
+
+.carousel-caption-custom {
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    text-align: center;
+    width: 60%;
+    font-family: 'Georgia', serif; 
+    text-shadow: 2px 2px 4px #000000b3;
+    color: white; 
+}
+
+.carousel-caption-custom h3 {
+    font-size: 3.5rem; 
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: inherit; 
+}
+
+.carousel-caption-custom p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    color: inherit; 
+}
